@@ -7,7 +7,12 @@ const newApplicant = async (req, res) => {
   const result = await applicantsCollection.insertOne(data);
   res.send(result);
 };
-
+const viewCandidateResume = async (req, res) => {
+  const id = req.params.resumeId;
+  const query = { _id: ObjectId(id) };
+  const result = await applicantsCollection.findOne(query);
+  res.send(result);
+};
 const getApplicants = async (req, res) => {
   const applicants = await applicantsCollection.find({}).toArray();
   res.send(applicants);
@@ -82,5 +87,6 @@ module.exports = {
   appliedJob,
   singleCandidates,
   handleUpdateStatus,
-  deleteApplicantsData
+  deleteApplicantsData,
+  viewCandidateResume,
 };

@@ -37,9 +37,9 @@ app.use("/", hrTaskRouter);
 app.use("/", submittedTaskRouter);
 
 /* testing api  */
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./Views/index.html"));
-});
+app.get('/', (req, res) => {
+  res.send('Server is running')
+})
 
 /* not found routes */
 app.use((req, res, next) => {
