@@ -9,7 +9,7 @@ const addEmployee = async (req, res) => {
   res.send(result);
 };
 
-// Get all employe details
+// Get all employe details from the database
 const getEmployee = async (req, res) => {
   const getAllEmployeDetails = await employeesDataCollection.find({}).toArray();
   res.send(getAllEmployeDetails);
