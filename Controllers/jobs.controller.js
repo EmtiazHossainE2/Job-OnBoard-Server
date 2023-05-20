@@ -5,7 +5,7 @@ const { ObjectId } = require("mongodb");
 const jobsCollection = client.db("jobOnboard").collection("jobs");
 
 
-//Get All Job
+//Get All Job form the database
 const allJob = async (req, res) => {
 
   const { search, location, cat, salary, type } = req.query;
